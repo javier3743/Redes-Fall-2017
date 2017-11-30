@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="An interactive getting started guide for Brackets.">
+    <link rel="stylesheet" href="/static/main.css">
+
+</head>
+
+<body>
+    <div>
+        <h1>Monitoring</h1>
+        <ul>
+            <li><a href="/">Home</a> </li>
+            <li><a class="active" href="/monitoring">Status of PC</a> </li>
+            <li><a href="/requests-download">Request Download</a></li>
+            <li><a href="/status">Status of Downloads</a></li>
+            <li style="float:right"><a href="/about">About</a></li>
+
+        </ul>
+    </div>
+    <br>
+</body>
+
+<body>
+
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>User</th>
+            <th>OS</th>
+            <th>Memory</th>
+            <th>Cpu</th>
+            <th>Swap</th>
+            <th>Disk</th>
+            <th></th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+            {% for i in range(0,8) %}
+            <td>{{ row[i] }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

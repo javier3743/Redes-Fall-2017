@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="An interactive getting started guide for Brackets.">
+    <link rel="stylesheet" href="/static/main.css">
+
+</head>
+
+<body>
+    <div>
+        <h1>Monitoring</h1>
+        <ul>
+            <li><a href="/">Home</a> </li>
+            <li><a href="/monitoring">Status of PC</a> </li>
+            <li><a href="/requests-download">Request Download</a></li>
+            <li><a class="active" href="/status">Status of Downloads</a></li>
+            <li style="float:right"><a href="/about">About</a></li>
+
+        </ul>
+    </div>
+    <br>
+</body>
+
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Progress</th>
+            <th>ETA</th>
+            <th>Status</th>
+            <th>Speed</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+            {% for i in row %}
+            <td>{{ i }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+<body>Upload Time: {{time}}</body>
+</html>
